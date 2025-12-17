@@ -1,0 +1,109 @@
+:root[data-theme="light"] {
+  --text-c: rgb(66, 64, 64);
+  --text-c-2: #d4d1d1;
+  --intro-icon-c: #f1f1f1;
+  --name-g-1: #501ace;
+  --name-g-2: #8753ff;
+}
+
+:root[data-theme="dark"] {
+  --text-c: #f1f1f1;
+  --text-c-2: #d4d1d1;
+  --intro-icon-c: #f1f1f1;
+  --name-g-1: #501ace;
+  --name-g-2: #8753ff;
+}
+
+.introWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh); /* Höhe minus Navbar */
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-c);
+    margin: var(--margin-rem);
+}
+
+.intro h2 {
+    font-family: 'Roboto Thin', sans-serif;
+    font-weight: 1;
+    font-size: 3rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.intro h1 {
+    font-family: 'Roboto Medium', sans-serif;
+    margin: 0 2rem;
+    font-size: 6rem;
+}
+
+.intro p {
+    font-family: 'Roboto Regular', sans-serif;
+    font-weight: 100;
+    max-width: 50%;
+    font-size: 1.5rem;
+    color: var(--text-c-2);
+}
+
+.introBtn {
+    user-select: none;
+    display: flex;
+    justify-self: start;
+    padding: 6px 12px;
+    width: fit-content;
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    background: linear-gradient(
+        to right,
+        var(--navbar-bg-g-1),
+        var(--navbar-bg-g-2)
+    );
+    /*background-color: var(--navbar-bg-color);*/
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1.5px solid var(--navbar-border-c);
+}
+
+.introBtnText {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-c);
+  width: fit-content;
+  text-transform: uppercase;
+  font-family: 'Roboto Thin', sans-serif;
+  font-weight: 1000;
+  font-size: 1rem;
+  margin: 0px 5px 0px 5px;
+  min-width: calc(1rem + 10px);
+  transition: 0.3s ease-in-out; 
+  opacity: 0.8;
+}
+
+.introBtn:hover .introBtnText {
+  letter-spacing: .5px;
+  opacity: 1;
+  transition: 0.3s ease-in-out; 
+}
+
+.introIcon {
+  height: 30px;
+  width: fit-content;
+  margin: 5px;
+}
+
+.introIcon path, circle {
+  stroke: var(--intro-icon-c);
+  color: var(--intro-icon-c);
+  stroke-width: 1px;
+}

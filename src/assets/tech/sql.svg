@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g transform="matrix(5.33333,0,0,5.33333,0,0)">
+        <ellipse cx="12" cy="5" rx="8" ry="3" style="fill:none;stroke:rgb(37,0,211);stroke-width:1.5px;"/>
+    </g>
+    <g transform="matrix(5.33333,0,0,5.33333,0,0)">
+        <path d="M7,10.842C7.602,11.023 8.274,11.172 9,11.282" style="fill:none;fill-rule:nonzero;stroke:rgb(37,0,211);stroke-width:1.5px;stroke-linecap:round;"/>
+    </g>
+    <g transform="matrix(5.33333,0,0,5.33333,0,0)">
+        <path d="M20,12C20,13.657 16.418,15 12,15C7.582,15 4,13.657 4,12" style="fill:none;fill-rule:nonzero;stroke:rgb(37,0,211);stroke-width:1.5px;"/>
+    </g>
+    <g transform="matrix(5.33333,0,0,5.33333,0,0)">
+        <path d="M7,17.842C7.602,18.023 8.274,18.172 9,18.282" style="fill:none;fill-rule:nonzero;stroke:rgb(37,0,211);stroke-width:1.5px;stroke-linecap:round;"/>
+    </g>
+    <g transform="matrix(5.33333,0,0,5.33333,0,0)">
+        <path d="M20,5L20,19C20,20.657 16.418,22 12,22C7.582,22 4,20.657 4,19L4,5" style="fill:none;fill-rule:nonzero;stroke:rgb(37,0,211);stroke-width:1.5px;"/>
+    </g>
+</svg>

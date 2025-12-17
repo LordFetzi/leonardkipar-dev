@@ -1,0 +1,215 @@
+:root[data-theme="light"] {
+  --skill-g-1: #501ace;
+  --skill-g-2: #4a90e2;
+  --skill-bg-g-1: rgba(39, 39, 41, 0.034);
+  --skill-bg-g-2: rgba(110, 108, 108, 0.301);
+  --skill-border-c: rgba(255, 255, 255, 0.1);
+  --skill-icon-c: rgb(66, 64, 64);
+}
+
+:root[data-theme="dark"] {
+  --skill-g-1: #501ace;
+  --skill-g-2: #8753ff;
+  --skill-bg-g-1: rgba(233, 228, 228, 0.014);
+  --skill-bg-g-2: rgba(80, 77, 77, 0.204);
+  --skill-border-c: rgba(255, 255, 255, 0.1);
+  --skill-icon-c: #f1f1f1;;
+}
+
+.skillsWrapper {
+    position: relative; /* Wichtig für absolute Positionierung der Sphere */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: var(--margin-rem);
+    z-index: 1;
+}
+
+.skills h2 {
+    font-family: 'Roboto Medium', sans-serif;
+    font-weight: 1;
+    font-size: 3rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: var(--text-c);
+}
+
+.skillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    height: 10rem;
+    width: 10rem;
+    z-index: 3;
+    padding: 12px 12px;
+    border-radius: 20px;
+    background: linear-gradient(
+        to right,
+        var(--skill-bg-g-1),
+        var(--skill-bg-g-2)
+    );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1.5px solid var(--skill-border-c);
+    transition: width 0.3s ease, height 0.3s ease;
+    position: relative;
+}
+
+.skill:hover {
+    width: 15rem;
+    justify-content: normal;
+}
+
+.skillPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: all 0.4s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.skillPreview img {
+  width: 3rem;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.skill:hover .skillPreview {
+    left: 0;
+    transform: translateY(-260%);
+}
+
+.skill:hover .skillPreview img {
+  width: 1.5rem;
+  border-radius: 5px;
+}
+
+.skillPreview h3 {
+  margin: 5px;
+  transition: font-size 0.3s ease;
+}
+
+.skill:hover .skillPreview h3 {
+  font-size: 1rem;
+}
+
+.skillConfidence {
+    display: none;
+    flex-direction: column;
+}
+
+.skillInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  opacity: 0;
+  margin-top: 1.5rem;
+  transition: opacity .1s ease-out
+}
+
+.skill:hover .skillInfo {
+  opacity: 1;
+  transition: opacity 1.8s ease-in;
+}
+
+.skill:hover .skillConfidence {
+  display: flex;
+}
+
+.skillInfo p {
+    margin: 1px;
+}
+
+.skillConfidence .skillProgressBG {
+    width: 100%;
+    height: 14px;
+    background-color: var(--skill-bg-g-2);
+    border-radius: 20px;
+}
+
+.skillConfidence .skillProgress {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 14px;
+    border-radius: 20px;
+}
+
+.skillProgress p {
+    font-size: 0.85rem;
+    font-family: 'Roboto Thin', sans-serif;
+    color: black;
+    opacity: 0.8;
+    padding-right: 3px;
+}
+
+.skillConfidence .confidenceText {
+    margin: 0;
+    font-size: 0.7rem;
+    color: var(--text-c-2);
+}
+
+.skill:hover .animatedSkillBorder{
+  opacity: 1;
+  transition: opacity .6s ease-in;
+}
+
+.animatedSkillBorder {
+  opacity: 0;
+  transition: opacity .6s ease-out;
+  position: absolute;
+  pointer-events: none;
+  mask-composite: intersect;
+  mask-clip: padding-box, border-box;
+  mask-image: linear-gradient(transparent, transparent), linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+  inset: 0px;
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: initial;
+  border-color: rgba(0, 0, 0 ,0);
+}
+
+.skillBeam {
+  position: absolute;
+  offset-path: inset(4px round 20px);
+  offset-rotate: auto;
+  will-change: offset-distance;
+  transform: translateZ(0px);
+  width: 5rem;
+  height: 10px;
+  animation: rotateBeam 6s linear infinite;
+}
+
+@keyframes rotateBeam {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
