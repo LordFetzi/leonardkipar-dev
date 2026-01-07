@@ -1,12 +1,4 @@
-:root[data-theme="light"] {
-  --text-c: rgb(66, 64, 64);
-  --text-c-2: #d4d1d1;
-  --intro-icon-c: #f1f1f1;
-  --name-g-1: #501ace;
-  --name-g-2: #8753ff;
-}
-
-:root[data-theme="dark"] {
+:root {
   --text-c: #f1f1f1;
   --text-c-2: #d4d1d1;
   --intro-icon-c: #f1f1f1;
@@ -106,4 +98,39 @@
   stroke: var(--intro-icon-c);
   color: var(--intro-icon-c);
   stroke-width: 1px;
+}
+
+@media (max-width: 960px) {
+  .intro h1 {
+    font-size: 4.2rem;
+    margin: 0 1rem;
+  }
+
+  .intro p {
+    max-width: 100%;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .intro h2 {
+    font-size: 2.2rem;
+  }
+
+  .intro h1 {
+    font-size: 3.1rem;
+    margin: 0;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  .introBtnText {
+    font-size: 0.9rem;
+  }
+
+  .introIcon {
+    height: 24px;
+  }
 }

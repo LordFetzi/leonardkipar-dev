@@ -1,70 +1,203 @@
+:root {
+  --project-bg-g-1: rgba(233, 228, 228, 0.014);
+  --project-bg-g-2: rgba(80, 77, 77, 0.205);
+}
+
 .projectsWrapper {
-    position: relative; /* Wichtig für absolute Positionierung der Sphere */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .projects {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: var(--margin-rem);
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: var(--margin-rem);
+  z-index: 1;
 }
 
 .projects h2 {
-    font-family: 'Roboto Medium', sans-serif;
-    font-weight: 1;
-    font-size: 3rem;
-    margin-bottom: 0;
-    margin-top: 0;
-    color: var(--text-c);
+  font-family: 'Roboto Medium', sans-serif;
+  font-weight: 600;
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  margin: 0;
+  color: var(--text-c);
 }
 
-.projectsSlider {
+.projectCarousel {
+    overflow: clip;
+    position: relative;
+}
+
+.projectTrack {
     display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    gap: 10px;
+    gap: 14px;
+    width: max-content;
+    animation: project-scroll 30s linear infinite;
 }
 
-.projectBtn {
-    position: absolute;
+.projectCarousel:hover .projectTrack {
+    animation-play-state: paused;
+}
+
+.projectCard {
+    --mask-left: 0px;
+    --mask-left-end: 0px;
+    --mask-right-start: 100%;
+    --mask-right: 100%;
+    max-width: 33vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1.5px solid var(--skill-border-c);
+    background: linear-gradient(to right, var(--project-bg-g-1), var(--project-bg-g-2));
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: 0.3s ease-in-out;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        transparent var(--mask-left),
+        #000 var(--mask-left-end),
+        #000 var(--mask-right-start),
+        transparent var(--mask-right),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        transparent var(--mask-left),
+        #000 var(--mask-left-end),
+        #000 var(--mask-right-start),
+        transparent var(--mask-right),
+        transparent 100%
+    );
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.projectCard > * {
+    position: relative;
     z-index: 1;
 }
 
-.right {
-    align-self: flex-start;
+.projectCard:hover h3, .projectCard:hover p {
+    opacity: 1;
+    
 }
 
-.left {
-    align-self: flex-end;
+.projectCard img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin: 0px 0px 10px 0px;
+    border-radius: 20px 20px 0 0;
 }
 
-.project {
-    display: flex;
-    flex-direction: column;
-    user-select: none;
-    height: 100%;
-    min-width: 33%;
-    z-index: 0;
-    padding: 12px 12px;
-    border-radius: 20px;
-    background: linear-gradient(
-        to right,
-        var(--skill-bg-g-1),
-        var(--skill-bg-g-2)
-    );
+.projectCard h3 {
+    margin: 0px 10px;
+    color: var(--text-c);
+    opacity: 0.8;
+}
+
+.projectCard p {
+    margin: 0px 10px 10px 10px;
+    color: var(--text-c-2);
+    opacity: 0.8;
+}
+
+.projectCard a {
+    margin: 0px 10px 10px 10px;
+    background: linear-gradient(to right, var(--navbar-bg-g-1), var(--navbar-bg-g-2));
+    padding: 6px 12px;
+    min-height: 25px;
+    border-radius: 10px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border: 1.5px solid var(--skill-border-c);
+    border: 1.5px solid var(--navbar-border-c);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-c);
+    width: fit-content;
+    text-transform: uppercase;
+    font-family: 'Roboto Thin', sans-serif;
+    font-weight: 1000;
+    font-size: 1rem;
+    min-width: calc(1rem + 10px);
+    transition: 0.3s ease-in-out;
+    opacity: 0.8;
+    bottom: 0;
+    margin-top: auto;
+    cursor: pointer;
 }
 
-.project .projectImage {
-    width: 95%;
-    align-self: center;
-    cursor: pointer;
+a:hover {
+  letter-spacing: .5px;
+  opacity: 1;
+  transition: 0.3s ease-in-out; 
+}
+
+a:hover .linkIcon {
+    opacity: 1;
+}
+
+.linkIcon {
+  height: 24px;
+  width: fit-content;
+  margin: 5px;
+  opacity: 0.8;
+}
+
+.linkIcon path, .linkIcon circle {
+  stroke: var(--intro-icon-c);
+  color: var(--intro-icon-c);
+  stroke-width: .1px;
+}
+
+@keyframes project-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 960px) {
+  .projectCard {
+    max-width: 60vw;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects h2 {
+    font-size: 2.1rem;
+  }
+
+  .projectCard {
+    max-width: 80vw;
+  }
+
+  .projectCard h3 {
+    font-size: 1rem;
+  }
+
+  .projectCard p {
+    font-size: 0.9rem;
+  }
+
+  .projectCard a {
+    font-size: 0.85rem;
+  }
 }

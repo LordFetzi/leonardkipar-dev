@@ -1,9 +1,5 @@
-:root[data-theme="light"] {
-  --indicator-c: rgb(66, 64, 64);
-}
-
-:root[data-theme="dark"] {
-  --indicator-c: #f1f1f1;;
+:root {
+  --indicator-c: #f1f1f1;
 }
 
 .sectionIndicator {
@@ -18,6 +14,7 @@
   z-index: 999;
   pointer-events: auto; /* nicht blockiert durch Overlay */
   align-items: center;
+  transform: translateY(-50%);
 }
 
 .sectionIndicator .dot {
@@ -34,4 +31,21 @@
   width: 16px;
   height: 16px;
   opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .sectionIndicator {
+    right: 1rem;
+    gap: 12px;
+  }
+
+  .sectionIndicator .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .sectionIndicator .dot.active {
+    width: 12px;
+    height: 12px;
+  }
 }

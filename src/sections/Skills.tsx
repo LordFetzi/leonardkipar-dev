@@ -1,6 +1,13 @@
 import '../css/skills.css'
 import { useLang } from '../components/LanguageContext'
 import json from '../locales/lang.json'
+import { useState, type CSSProperties } from 'react'
+
+const skillIcons = import.meta.glob('../assets/tech/*.svg', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+}) as Record<string, string>
 
 type Skill = {
     name: string,
@@ -31,37 +38,92 @@ for(let i = 1; i <= maxObjects; i++) {
     skills.push(skill);
 }
 
+function resolveSkillLogo(logoFile: string) {
+    if (logoFile.startsWith('http') || logoFile.startsWith('/')) {
+        return logoFile
+    }
+    return skillIcons[`../assets/tech/${logoFile}`] ?? ''
+}
+
 export default function Skills() {
     const {t} = useLang()
+    const [activeIndex, setActiveIndex] = useState(0)
+    const activeSkill = skills[activeIndex] ?? skills[0]
+
     return (
-        <>
-            <div className="skillsWrapper">
-                <div className='skills'>
-                    <h2>{t("nav.skills")}</h2>
-                    <div className='skillsContainer'>
-                        {skills.map((obj, i) => (
-                            <div className="skill" key={`skill${i}`}>
-                                <div className="animatedSkillBorder">
-                                    <div className='skillBeam' style={{background: `linear-gradient(45deg, transparent 0, ${t(obj.skillC2)} 50%, ${t(obj.skillC1)} 70%, transparent 100%)`}} />
+        <div className="skillsWrapper">
+            <div className='skills'>
+                <h2>{t("nav.skills")}</h2>
+
+                <div className='skillsSplit'>
+                    <div className='skillsList'>
+                        {skills.map((obj, i) => {
+                            const isActive = i === activeIndex
+                            return (
+                                <div
+                                    className={`skillBadge ${isActive ? 'active' : ''}`}
+                                    key={`skill${i}`}
+                                    onMouseEnter={() => setActiveIndex(i)}
+                                    onFocus={() => setActiveIndex(i)}
+                                    tabIndex={0}
+                                    style={{
+                                        '--accent-1': t(obj.skillC1),
+                                        '--accent-2': t(obj.skillC2)
+                                    } as CSSProperties}
+                                >
+                                    <div className="animatedSkillBadgeBorder">
+                                        <span className="skillBadgeBeam" />
+                                    </div>
+                                    <span className='skillBadgeInner'>
+                                        <span className='skillBadgeIcon'>
+                                            <img className='skillImg' src={resolveSkillLogo(t(obj.logo))} alt={t(obj.name)} />
+                                        </span>
+                                        <span className='skillBadgeName'>{t(obj.name)}</span>
+                                    </span>
                                 </div>
-                                <div className="skillPreview">
-                                    <img className='skillImg' src={'src/assets/tech/'+t(obj.logo)}></img>
-                                    <h3>{t(obj.name)}</h3>
+                            )
+                        })}
+                    </div>
+
+                    <div className='skillDetail'>
+                        {activeSkill && (
+                            <div
+                                key={activeSkill.name}
+                                className='skillDetailCard'
+                                style={{
+                                    '--accent-1': t(activeSkill.skillC1),
+                                    '--accent-2': t(activeSkill.skillC2)
+                                } as CSSProperties}
+                            >
+                                <div className='skillDetailHeader'>
+                                    <div className='skillDetailIcon'>
+                                        <img className='skillImg' src={resolveSkillLogo(t(activeSkill.logo))} alt={t(activeSkill.name)} />
+                                    </div>
+                                    <div className='skillDetailTitle'>
+                                        <p className='skillDetailLabel'>{t("nav.skills")}</p>
+                                        <h3>{t(activeSkill.name)}</h3>
+                                    </div>
                                 </div>
-                                <div className="skillInfo">
-                                    <p>{t(obj.text)}</p>
-                                    <div className="skillConfidence">
-                                        <p className="confidenceText">{t("skills.confidence")}</p>
-                                        <div className="skillProgressBG">
-                                            <div className="skillProgress" style={{width: `${t(obj.confidence)}%`, background: `linear-gradient(to right, ${t(obj.skillC2)}, ${t(obj.skillC1)}`}}><p>{t(obj.confidence)}%</p></div>
-                                        </div>
+
+                                <p className='skillDetailText'>{t(activeSkill.text)}</p>
+
+                                <div className='skillConfidence'>
+                                    <div className='skillConfidenceHeader'>
+                                        <span className='confidenceText'>{t("skills.confidence")}</span>
+                                        <span className='confidenceValue'>{t(activeSkill.confidence)}%</span>
+                                    </div>
+                                    <div className="skillProgressBG">
+                                        <div
+                                            className="skillProgress"
+                                            style={{width: `${t(activeSkill.confidence)}%`}}
+                                        />
                                     </div>
                                 </div>
                             </div>
-                        ))}
+                        )}
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

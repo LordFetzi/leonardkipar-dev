@@ -9,8 +9,6 @@ html, body {
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-
   background: var(--bg-c);
 
   font-synthesis: none;
@@ -19,25 +17,24 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 
   --margin-rem: 12rem;
-}
 
-
-:root[data-theme="light"] {
-  /*Variable colors*/
-  --bg-c: #8f8c8c;
-  --contour-color: #f1f1f1;
-  --blob-1: rgba(80, 26, 206, 0.527);
-  --blob-2: rgba(64, 27, 228, 0.15);
-  --blob-3: rgba(64, 27, 228, 0.048);
-}
-
-
-:root[data-theme="dark"] {
   --bg-c: #0f0f0f;
   --contour-color: #f1f1f1;
   --blob-1: rgba(139, 92, 246, 0.15);
   --blob-2: rgba(73, 26, 49, 0.102);
   --blob-3: rgba(41, 42, 43, 0.078);
+}
+
+@media (max-width: 960px) {
+  :root {
+    --margin-rem: 7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --margin-rem: 3rem;
+  }
 }
 
 

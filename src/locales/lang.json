@@ -6,9 +6,7 @@
     "nav.skills": "Tech Stack",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
-    "nav.dark": "Dark",
-    "nav.light": "Light",
-    
+
     "greet.iam": "I'm",
     "greet.text": "Programmer by passion. Builds whatever happens to be stuck in his head. Self-proclaimed master of the sacred art of Googling. Loves getting lost in creative ideas – from Minecraft mods to automated web tools. Always chasing the next project that was ‘supposed to be just a small script.",
     "greet.more": "Learn more about me ",
@@ -31,7 +29,6 @@
     "career.milestone.4.title": "Junior Data Engineer",
     "career.milestone.4.text": "Employed as a Junior Data Engineer at ifm with regular involvement in Data Warehouse tasks",
 
-    
     "skills.confidence": "Confidence Level",
 
     "skills.object.1.name": "JavaScript",
@@ -123,7 +120,41 @@
     "skills.object.13.text": "Used in numerous small projects to run JavaScript efficiently on the server side. Especially useful for local tools and automation scripts.",
     "skills.object.13.c1": "#75d45f",
     "skills.object.13.c2": "#4C8D3E",
-    "skills.object.13.confidence": "75"
+    "skills.object.13.confidence": "75",
+
+    "projects.button": "Learn more about this project",
+
+    "projects.object.1.title": "Fetzi's Asian Decoration",
+    "projects.object.1.description": "A Minecraft Mod that adds multiple Asian themed Blocks/Items/Animals to Minecraft.",
+    "projects.object.1.image": "fetzis_asian_decoration.png",
+    "projects.object.1.link": "https://www.curseforge.com/minecraft/mc-mods/fetzis-asian-decoration;https://modrinth.com/mod/fetzis-asian-decoration",
+
+    "projects.object.2.title": "Fetzi's Displays",
+    "projects.object.2.description": "A Minecraft Mod that adds multiple Ways to Display Items in Minecraft",
+    "projects.object.2.image": "fetzis_displays.png",
+    "projects.object.2.link": "https://www.curseforge.com/minecraft/mc-mods/fetzis-displays;https://modrinth.com/mod/fetzis-displays",
+
+    "projects.object.3.title": "leonardkipar.dev",
+    "projects.object.3.description": "My personal webpage you are on right now!",
+    "projects.object.3.image": "leonardkipar.dev.png",
+    "projects.object.3.link": "https://github.com/LordFetzi/leonardkipar-dev",
+
+    "contact.card.label": "Say hello",
+    "contact.card.title": "Lets connect",
+    "contact.card.text": "Email is the fastest way to reach me. I read everything and reply as soon as possible.",
+    "contact.email.label": "Email",
+    "contact.email.value": "contact@leonardkipar.dev",
+    "contact.email.subject": "Let's work together!👋",
+    "contact.email.body": "Hey, my name is <NAME> and I'm working for <COMPANY>.\nI'm reaching out about <PROJECT / JOB>.\n\nQuick snapshot:\n- Scope: <SCOPE>\n- Timeline: <TIMELINE>\n- Budget/Rate: <BUDGET>\n\nBest regards,\n<NAME>",
+    "contact.social.text": "And just if you want to see a bit more of me here are my socials!",
+    "contact.social.github.label": "GitHub",
+    "contact.social.github.url": "https://github.com/LordFetzi",
+    "contact.social.reddit.label": "Reddit",
+    "contact.social.reddit.url": "https://www.reddit.com/user/RealFetzi",
+    "contact.social.discord.label": "Discord",
+    "contact.social.discord.url": "https://discord.com/users/277122410724065280",
+    "contact.social.x.label": "X",
+    "contact.social.x.url": "https://x.com/Fetzi13"
   },
   "de": {
     "nav.lang": "Deutsch",
@@ -132,8 +163,6 @@
     "nav.skills": "Tech Stack",
     "nav.projects": "Projekte",
     "nav.contact": "Kontakt",
-    "nav.dark": "Dunkel",
-    "nav.light": "Hell",
     
     "greet.iam": "Ich bin",
     "greet.text": "Programmierer aus Begeisterung. Erstellt, was ihm gerade im Kopf rumschwirrt. Selbsternannter Meister der Kunst des Googlens. Verliert sich gerne in kreativen Ideen – von Minecraft-Mods bis hin zu automatisierten Webtools. Immer auf der Suche nach dem nächsten Projekt, das 'eigentlich nur ein kleines Skript' werden sollte.",
@@ -251,19 +280,38 @@
     "skills.object.13.c2": "#4C8D3E",    
     "skills.object.13.confidence": "75",
 
+    "projects.button": "Erfahre mehr über dieses Projekt",
+
     "projects.object.1.title": "Fetzi's Asian Decoration",
     "projects.object.1.description": "A Minecraft Mod that adds multiple Asian themed Blocks/Items/Animals to Minecraft.",
-    "projects.object.1.image": "https://imgur.com/8aYPjZe.png",
+    "projects.object.1.image": "fetzis_asian_decoration.png",
     "projects.object.1.link": "https://www.curseforge.com/minecraft/mc-mods/fetzis-asian-decoration;https://modrinth.com/mod/fetzis-asian-decoration",
 
     "projects.object.2.title": "Fetzi's Displays",
     "projects.object.2.description": "A Minecraft Mod that adds multiple Ways to Display Items in Minecraft",
-    "projects.object.2.image": "https://imgur.com/97E07Wx.png",
+    "projects.object.2.image": "fetzis_displays.png",
     "projects.object.2.link": "https://www.curseforge.com/minecraft/mc-mods/fetzis-displays;https://modrinth.com/mod/fetzis-displays",
 
     "projects.object.3.title": "Fetzi's Displays",
     "projects.object.3.description": "A Minecraft Mod that adds multiple Ways to Display Items in Minecraft",
-    "projects.object.3.image": "https://imgur.com/97E07Wx.png",
-    "projects.object.3.link": "https://www.curseforge.com/minecraft/mc-mods/fetzis-displays;https://modrinth.com/mod/fetzis-displays"
+    "projects.object.3.image": "leonardkipar.dev.png",
+    "projects.object.3.link": "https://www.curseforge.com/minecraft/mc-mods/fetzis-displays;https://modrinth.com/mod/fetzis-displays",
+
+    "contact.card.label": "Kontakt",
+    "contact.card.title": "Lass uns reden",
+    "contact.card.text": "Per E-Mail erreichst du mich am schnellsten. Ich antworte so schnell wie möglich.",
+    "contact.email.label": "E-Mail",
+    "contact.email.value": "contact@leonardkipar.dev",
+    "contact.email.subject": "Lass uns zusammenarbeiten!👋",
+    "contact.email.body": "Hey, mein Name ist <NAME> und arbeite für <FIRMA>.\nIch schreibe dir wegen <PROJEKT / JOBANGEBOT>.\n\nKurzer Überblick:\n- Umfang: <UMFANG>\n- Zeitraum: <ZEITRAUM>\n- Budget/Tagessatz: <BUDGET>\n\nViele Grüße,\n<NAME>",
+    "contact.social.text": "Und nur für den Fall, dass du mehr von mir sehen willst hier sind meine Socials!",
+    "contact.social.github.label": "GitHub",
+    "contact.social.github.url": "https://github.com/LordFetzi",
+    "contact.social.reddit.label": "Reddit",
+    "contact.social.reddit.url": "https://www.reddit.com/user/RealFetzi",
+    "contact.social.discord.label": "Discord",
+    "contact.social.discord.url": "https://discord.com/users/277122410724065280",
+    "contact.social.x.label": "X",
+    "contact.social.x.url": "https://x.com/Fetzi13"
   }
 }

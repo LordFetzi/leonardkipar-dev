@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 
-const sections = ['greet', 'about', 'career', 'skills', 'projects']
+const sections = ['greet', 'about', 'career', 'skills', 'projects', 'contact']
 
 type SectionContextType = {
   active: string

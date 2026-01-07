@@ -1,17 +1,9 @@
-:root[data-theme="light"] {
-  --navbar-bg-color: #3a3a3d;
-  --navbar-bg-g-1: rgba(39, 39, 41, 0.034);
-  --navbar-bg-g-2: rgba(110, 108, 108, 0.301);
-  --navbar-border-c: rgba(255, 255, 255, 0.1);
-  --navbar-icon-c: rgb(66, 64, 64);
-}
-
-:root[data-theme="dark"] {
+:root {
   --navbar-bg-color: #CCCCE8;
   --navbar-bg-g-1: rgba(233, 228, 228, 0.014);
   --navbar-bg-g-2: rgba(80, 77, 77, 0.205);
   --navbar-border-c: rgba(255, 255, 255, 0.1);
-  --navbar-icon-c: #f1f1f1;;
+  --navbar-icon-c: #f1f1f1;
 }
 
 
@@ -87,4 +79,33 @@ hr {
   stroke: var(--navbar-icon-c);
   color: var(--navbar-icon-c);
   stroke-width: 1px;
+}
+
+@media (max-width: 960px) {
+  .navbar {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    margin: 12px auto;
+    padding: 6px 8px;
+    max-width: calc(100% - 1.5rem);
+  }
+
+  .navBtn {
+    min-width: 70px;
+    font-size: 0.65rem;
+  }
+
+  .navIcon {
+    height: 22px;
+    margin: 4px;
+  }
+
+  hr {
+    display: none;
+  }
 }

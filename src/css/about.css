@@ -1,9 +1,4 @@
-:root[data-theme="light"] {
-  --text-c: rgb(66, 64, 64);
-  --text-c-2: #d4d1d1;
-}
-
-:root[data-theme="dark"] {
+:root {
   --text-c: #f1f1f1;
   --text-c-2: #d4d1d1;
 }
@@ -51,4 +46,21 @@
     color: var(--text-c-2);
     margin: 5px;
     max-width: 60%;
+}
+
+@media (max-width: 960px) {
+    .about p {
+        max-width: 100%;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .about h2 {
+        font-size: 2.2rem;
+    }
+
+    .about p {
+        font-size: 1.05rem;
+    }
 }

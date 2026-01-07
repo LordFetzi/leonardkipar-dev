@@ -3,15 +3,19 @@ import translations from "../locales/lang.json"
 
 type Language = "en" | "de"
 
+type Dictionary = Record<Language, Record<string, string>>
+
+const languageContextShape = {
+  lang: "de" as Language,
+  setLang: (_: Language) => {},
+  t: (key: string) => key,
+}
+
 const LanguageContext = createContext<{
   lang: Language
   setLang: (l: Language) => void
-  t: (key: keyof typeof translations["de"] | string) => string
-}>({
-  lang: "de",
-  setLang: () => {},
-  t: (key) => key,
-})
+  t: (key: string) => string
+}>(languageContextShape)
 
 const getInitialLang = (): Language => {
   const stored = localStorage.getItem("lang")
@@ -30,8 +34,10 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
     localStorage.setItem("lang", newLang)
   }
 
-  const t = (key: keyof typeof translations["de"] | string) => {
-    return translations[lang][key] ?? key
+  const dict = translations as Dictionary
+
+  const t = (key: string) => {
+    return dict[lang]?.[key] ?? key
   }
 
   return (

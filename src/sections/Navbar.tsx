@@ -1,19 +1,15 @@
 import '../css/navbar.css'
 
 import { useLang } from '../components/LanguageContext'
-import { useDarkMode } from '../components/DarkmodeContext';
 import { ReactComponent as AboutMe } from '../assets/about-me.svg';
 import { ReactComponent as Mortarboard } from '../assets/mortarboard.svg';
 import { ReactComponent as Stack } from '../assets/stack.svg';
 import { ReactComponent as CodeFolder } from '../assets/code-folder.svg';
 import { ReactComponent as Contact } from '../assets/contact.svg';
 import { ReactComponent as Lang } from '../assets/lang.svg';
-import { ReactComponent as Moon } from '../assets/moon.svg';
-import { ReactComponent as Sun } from '../assets/sun.svg';
 
 export default function Navbar() {
     const { t, setLang, lang } = useLang()
-    const { theme, toggleTheme} = useDarkMode()
 
     return (
         <div className='navbar'>
@@ -41,20 +37,6 @@ export default function Navbar() {
         <a onClick={() => setLang(lang === "en" ? "de" : "en")} className='navBtn'>
             <Lang className='navIcon' />
             {t("nav.lang")}
-        </a>
-        <a onClick={toggleTheme} className='navBtn'>
-            {theme === "dark" && (
-                <>
-                    <Moon className='navIcon' />
-                    {t("nav.dark")}
-                </>
-            )}
-            {theme === "light" && (
-                <>
-                    <Sun className='navIcon' />
-                    {t("nav.light")}
-                </>
-            )}
         </a>
         </div>
     )

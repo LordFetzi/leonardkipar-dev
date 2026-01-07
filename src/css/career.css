@@ -1,19 +1,10 @@
-:root[data-theme="light"] {
-  --timeline-g-1: #501ace;
-  --timeline-g-2: #4a90e2;
-  --timeline-bg-g-1: rgba(39, 39, 41, 0.034);
-  --timeline-bg-g-2: rgba(110, 108, 108, 0.301);
-  --timeline-border-c: rgba(255, 255, 255, 0.1);
-  --timeline-icon-c: rgb(66, 64, 64);
-}
-
-:root[data-theme="dark"] {
+:root {
   --timeline-g-1: #501ace;
   --timeline-g-2: #8753ff;
   --timeline-bg-g-1: rgba(233, 228, 228, 0.014);
   --timeline-bg-g-2: rgba(80, 77, 77, 0.204);
   --timeline-border-c: rgba(255, 255, 255, 0.1);
-  --timeline-icon-c: #f1f1f1;;
+  --timeline-icon-c: #f1f1f1;
 }
 
 .careerWrapper {
@@ -177,5 +168,47 @@
   }
   to {
     offset-distance: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .timelineContainer {
+    height: auto;
+  }
+
+  .infoBox {
+    width: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .career h2 {
+    font-size: 2.2rem;
+  }
+
+  .timelineContainer {
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .timeline {
+    min-width: 520px;
+  }
+
+  .timelineDate {
+    font-size: 0.75rem;
+  }
+
+  .infoBox {
+    width: 160px;
+    padding: 6px 10px;
+  }
+
+  .infoBox h3 {
+    font-size: 1.1rem;
+  }
+
+  .infoBox p {
+    font-size: 0.9rem;
   }
 }
